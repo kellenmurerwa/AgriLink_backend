@@ -22,7 +22,7 @@ userSchema.methods.toJSON = function () {
 // Generate authentication token
 userSchema.methods.generateAuthToken = async function () {
     const user = this;
-    const token = jwt.sign({ _id: user.id.toString(), role: user.role }, process.env.JWT_SECRET);
+    const token = jwt.sign({ _id: user.id.toString(), role: user.role, firstName:user.firstName, lastName:user.lastName }, process.env.JWT_SECRET);
     return token;
 };
 

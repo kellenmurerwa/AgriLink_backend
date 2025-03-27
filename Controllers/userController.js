@@ -92,3 +92,20 @@ export const Login = async (req, res) => {
         res.status(401).json({ message: "Invalid email or password" });
     }
 };
+
+export const getAllUsers=async(req,res)=>
+{
+    try{
+    const AllUsers=await User.find();
+    if(AllUsers)
+    {
+    return res.status(200).json({
+        size:AllUsers.length,
+      AllUsers  
+    })}
+}
+    catch(error)
+    {
+        res.status(500).json("Internal server error",error)
+    }
+}
