@@ -16,7 +16,7 @@ const db_pass =process.env.DB_PASS;
 
 const app=express();
 app.use(cors({
-  origin:['http://localhost:5174','https://agri-link-rwanda.vercel.app/'],
+  origin:'*',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
